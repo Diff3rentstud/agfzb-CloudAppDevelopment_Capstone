@@ -1,4 +1,5 @@
 from django.urls import path
+from django.urls import reverse
 from django.conf.urls.static import static
 from django.conf import settings
 from . import views
@@ -10,8 +11,10 @@ urlpatterns = [
     # name the URL
 
     # path for about view
+    path(route="/about",view=views.about, name="about"),
 
     # path for contact us view
+    
 
     # path for registration
 
