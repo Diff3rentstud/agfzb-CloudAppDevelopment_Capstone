@@ -1,7 +1,9 @@
 from django.urls import path
 from django.urls import reverse
+from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
+
 from . import views
 
 app_name = 'djangoapp'
@@ -17,15 +19,15 @@ urlpatterns = [
     path(route="contact/",view=views.contact, name="contact"),
 
     # path for registration
-
+    path(route="registration/",view=views.registration_request,name="registration"),
     # path for login
+    path(route="login/",view=views.login_request,name="login"),
 
     # path for logout
-
-    path(route='', view=views.get_dealerships, name='index'),
+    path(route="logout/",view=views.logout_request, name="logout"),
 
     # path for dealer reviews view
-
+    path(route="", view=views.get_dealerships, name="dealer")
     # path for add a review view
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
